@@ -7,7 +7,7 @@ import models.Eleve;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main { //test
     public static void main(String[] args) {
         EleveDAO eleveDAO = new EleveDAO();
         Scanner scanner = new Scanner(System.in);

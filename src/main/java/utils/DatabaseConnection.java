@@ -11,6 +11,7 @@ public class DatabaseConnection {
 
     @org.jetbrains.annotations.Nullable
     public static Connection getConnection() {
+        //test
         try {
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
