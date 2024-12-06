@@ -14,6 +14,15 @@ public class Eleve {
         this.dateNaissance = dateNaissance;
         this.classe = classe;
     }
+    // Constructeur pour un élève existant avec un ID (récupéré de la BDD)
+    public Eleve(int id, String nom, String prenom, String dateNaissance, String classe) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.classe = classe;
+    }
+
 
     // Getters et Setters
     public int getId() {

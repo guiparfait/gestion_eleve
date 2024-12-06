@@ -47,5 +47,25 @@ public class EleveDAO {
         }
         return eleves;
     }
+    public List<Eleve> rechercherParNomEtPrenom(String nom, String prenom) {
+        String sql = "SELECT * FROM eleves WHERE nom = ? AND prenom = ?";
+        List<Eleve> eleves = new ArrayList<>();
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, nom);
+            stmt.setString(2, prenom);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                eleves.add(new Eleve(rs.getInt("id"), rs.getString("nom"),
+                        rs.getString("prenom"), rs.getString("date_naissance"),
+                        rs.getString("classe")));
+            }
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de la recherche : " + e.getMessage());
+        }
+        return eleves;
+    }
+
+
 }
 
